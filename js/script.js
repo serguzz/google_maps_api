@@ -2,7 +2,7 @@ function initMap() {
 
   // function that fetches weather info from OpenWeatherMap and stores it to the global variable "weatherData"
   function fetchWeather(lat, lng, event) {
-      var openWeatherMapKey = '16f4f20ff67e578e39e995c6769afd32';
+      var openWeatherMapKey = '_________________________';
 
       fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon='+lng+'&appid=' + openWeatherMapKey)
         .then(function(resp) {  return resp.json()
