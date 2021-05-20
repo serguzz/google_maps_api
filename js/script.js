@@ -2,9 +2,9 @@ function initMap() {
 
   // function that fetches weather info from OpenWeatherMap and stores it to the global variable "weatherData"
   function fetchWeather(lat, lng, event) {
-      var key = '16f4f20ff67e578e39e995c6769afd32';
+      var openWeatherMapKey = '16f4f20ff67e578e39e995c6769afd32';
 
-      fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon='+lng+'&appid=' + key)
+      fetch('https://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon='+lng+'&appid=' + openWeatherMapKey)
         .then(function(resp) {  return resp.json()
               }) // Convert data to json
           .then(function (data) {
@@ -32,9 +32,10 @@ function initMap() {
     })
 
     let infowindow = new google.maps.InfoWindow({
-        content: "",
+        content: "Hello!<br> This is Google Maps and Weather <br> JavaScript Project",
     });
-
+    infowindow.open(map, marker);
+    
     // click listener for the GoogleMap
     google.maps.event.addListener(map, 'click', function (event) {
 
